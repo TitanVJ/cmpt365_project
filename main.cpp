@@ -20,6 +20,9 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
+    // load in my videoobj
+    VideoObject VideoObject;
+    engine.rootContext()->setContextProperty("video", &VideoObject);
     engine.load(url);
 
     return app.exec();
